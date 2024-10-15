@@ -109,4 +109,37 @@ async function getData(e) { // Assuming buttons is passed as an argument
       cartItems.push(product);  
       localStorage.setItem('cartItems', JSON.stringify(cartItems));  
     }
-//handle customer information
+//ChatBot
+let isChatboxOpen = false;  
+
+function toggleChatbox() {  
+    const chatbox = document.getElementById('chatbox');  
+    const initialMessage = document.getElementById('initialMessage');  
+    chatbox.style.display = chatbox.style.display === 'block' ? 'none' : 'block';  
+
+    // Show the initial message when the chatbox is opened for the first time  
+    if (!isChatboxOpen) {  
+        initialMessage.style.display = 'block'; // Show the initial message when first opened  
+        isChatboxOpen = true; // Set the chatbox to open state  
+    }  
+}  
+
+function sendMessage() {  
+    const input = document.getElementById('messageInput');  
+    const messageText = input.value;  
+    if (messageText.trim() === '') return;  
+
+    const messagesContainer = document.getElementById('messages');  
+    const messageDiv = document.createElement('div');  
+    messageDiv.textContent = messageText;  
+    messagesContainer.appendChild(messageDiv);  
+
+    // Hide the initial message after the first user message  
+    const initialMessage = document.getElementById('initialMessage');  
+    if (initialMessage) {  
+        initialMessage.style.display = 'none';  
+    }  
+    
+    input.value = ''; // Clear the input after sending  
+    messagesContainer.scrollTop = messagesContainer.scrollHeight; // Scroll to latest message  
+}

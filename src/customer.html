@@ -23,7 +23,58 @@
         height: 100vh;
         box-sizing: border-box;
       }
+      .chatbox {  
+  position: fixed;  
+  bottom: 0;  
+  right: 20px;  
+  width: 300px;  
+  background-color: #fff;  
+  border: 1px solid #ccc;  
+  border-radius: 5px;  
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
+  display: none; /* Start hidden */  
+}  
 
+.chatbox-header {  
+  background-color: #444444;  
+  color: white;  
+  padding: 10px;  
+  border-top-left-radius: 5px;  
+  border-top-right-radius: 5px;  
+  display: flex;  
+  justify-content: space-between;  
+  align-items: center;  
+}  
+
+.chatbox-content {  
+  padding: 10px;  
+}  
+
+.messages {  
+  height: 200px;  
+  overflow-y: auto;  
+  margin-bottom: 10px;  
+  border: 1px solid #ccc;  
+  border-radius: 5px;  
+  padding: 5px;  
+}  
+
+.open-btn {  
+  position: fixed;  
+  bottom: 20px;  
+  right: 20px;  
+  padding: 10px 15px;  
+  background-color: white;  
+  color: white;  
+  border: none;  
+  border-radius: 5px;  
+  cursor: pointer;  
+}  
+#initialMessage{
+  background: #537e46;
+  color: white;
+  border: 0.5px solid #444444;
+}
       .container {
         width: 75%;
         max-width: 400px;
@@ -145,9 +196,36 @@
 
         
       </form>
-     <a href="landing.html"> <button >Place Order</button></a>
-    </div>
-    <script>
+      <a href="landing.html" id="placeOrderLink"> <button id="placeOrderButton">Place Order</button></a>  
+    </div>  
+    <div class="chatbox">  
+      <div class="chatbox-header">  
+          <span>Chat</span>  
+          <button class="close-btn" onclick="toggleChatbox()">×</button>  
+      </div>  
+      <div class="chatbox-content">  
+          <div class="messages" id="messages">  
+              <div id="initialMessage" class="initial-message">Hello, I'm Alora bot. Ask me anything:<</div>  
+          </div>  
+          <input type="text" id="messageInput" placeholder="Type a message..." />  
+          <button onclick="sendMessage()">Send</button>  
+      </div>  
+  </div>  
+
+  <button class="open-btn" onclick="toggleChatbox()"><img src="../media/icons8-ai-chatting-50.png" alt=""></button>  
+
+    <script>  
+        document.getElementById('placeOrderButton').addEventListener('click', function(event) {  
+            // Prevent the default action of the link  
+            event.preventDefault();  
+    
+            // Clear the local storage  
+            localStorage.clear();  
+    
+            // After clearing, navigate to the landing page  
+            window.location.href = 'landing.html';  
+        });  
+      /*
       const BaseUrl = "http://localhost:8585/";
 
       document.addEventListener("DOMContentLoaded", function () {
@@ -192,7 +270,7 @@
             alert("An error occurred while placing the order");
           }
         });
-      });
+      });*/
     </script>
   </body>
 </html>

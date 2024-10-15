@@ -43,7 +43,7 @@ background-size:cover !important;
     display: block;
 }
 button:hover{
-    background-color: #537e46;
+    background-color: #a0a0a0;
     transition: 0.2s ease-in-out;
     cursor:pointer;
     color: white;
@@ -64,16 +64,10 @@ h1{
     color:#5B4327 !important;
     font-size: 26px !important;
 }
-.buy-btn{
-    background-color: white;
-    padding:10px 30px;
-    border-radius:100px;
-    color: #5B4327;
-    font-size: 16px;
-}
+
 .cart-btn{
-    background-color: #537e46;
-    color: white;
+    background-color: white;
+    margin: 5px;
     padding:10px 30px;
     border-radius:100px;
     font-size: 16px;
@@ -147,7 +141,7 @@ a{
 }
 .floating-button {
   position: fixed;
-  bottom: 20px;
+  top: 70px;
   right: 20px;
   background-color: white;
   color: #537e46;
@@ -163,4 +157,55 @@ a{
   font-size:24px;
   
 }
+.chatbox {  
+  position: fixed;  
+  bottom: 0;  
+  right: 20px;  
+  width: 300px;  
+  background-color: #fff;  
+  border: 1px solid #ccc;  
+  border-radius: 5px;  
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
+  display: none; /* Start hidden */  
+}  
 
+.chatbox-header {  
+  background-color: #444444;  
+  color: white;  
+  padding: 10px;  
+  border-top-left-radius: 5px;  
+  border-top-right-radius: 5px;  
+  display: flex;  
+  justify-content: space-between;  
+  align-items: center;  
+}  
+
+.chatbox-content {  
+  padding: 10px;  
+}  
+
+.messages {  
+  height: 200px;  
+  overflow-y: auto;  
+  margin-bottom: 10px;  
+  border: 1px solid #ccc;  
+  border-radius: 5px;  
+  padding: 5px;  
+}  
+
+.open-btn {  
+  position: fixed;  
+  bottom: 20px;  
+  right: 20px;  
+  padding: 10px 15px;  
+  background-color: white;  
+  color: white;  
+  border: none;  
+  border-radius: 5px;  
+  cursor: pointer;  
+}  
+#initialMessage{
+  background: #537e46;
+  color: white;
+  border: 0.5px solid #444444;
+}

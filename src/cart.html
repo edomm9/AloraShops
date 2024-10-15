@@ -126,7 +126,7 @@
           </table>
           <h4 id="totalPrice"></h4>
           <br /><br />
-          <a href="customer.html"><button>Check Out</button></a>
+          <a href="customer.html"><button id="checkout-btn">Check Out</button></a>
         </div>
       </div>
     </div>
@@ -160,6 +160,10 @@
 
         // Display total price
         totalPriceCell.textContent = `Total Price: $${totalPrice.toFixed(2)}`;
+      });
+      const checkout = document.getElementById('checkout-btn');
+      checkout.addEventListener('click', function() {
+        localstorage.clear()
       });
     </script>
     <script

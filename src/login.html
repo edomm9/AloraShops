@@ -166,7 +166,7 @@
               <input type="password" placeholder="Password" id="signup-pass" name="password" required />
             </div>
             
-            <button id="signup-btn" class="login-btn" type="submit">Register</button>
+            <button id="signup-btn" class="login-btn" type="submit">Log In</button>
             <p style="display: inline">No account?</p>
             <a href="signup.html">Register</a>
           </form>
@@ -174,5 +174,23 @@
         </div>
       </div>
     </div>
+    <script>
+     const form = document.getElementById('signup-form'); // Ensure you have an element with this ID  
+
+form.addEventListener('submit', function(event) {  
+    event.preventDefault();  
+    
+    // Move these lines inside the event listener  
+    const email = document.getElementById('signup-email').value;  
+    const pass = document.getElementById('signup-pass').value;  
+    
+    if (email === "habeshawi@gmail.com" && pass === "Habesha12345") {  
+        window.location = "admin.html";  
+    } else {  
+        alert("Invalid login credentials."); // Optional: feedback for failed login  
+    }  
+});
+
+    </script>
       </body>
 </html>
